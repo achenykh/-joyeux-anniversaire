@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Mr LANYO</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+        .birthday-card {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background: radial-gradient(circle, #ff6363 40%, #ff9a9e 100%);
+            border-radius: 50%;
+            animation: floatUp 5s ease-in-out infinite;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-700px); opacity: 0; }
+        }
+        .balloon:nth-child(2) { animation-delay: 1s; left: 20%; }
+        .balloon:nth-child(3) { animation-delay: 2s; left: 40%; }
+        .balloon:nth-child(4) { animation-delay: 3s; left: 60%; }
+        .balloon:nth-child(5) { animation-delay: 4s; left: 80%; }
+    </style>
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+        <div class="birthday-card text-center">
+            <h1 class="display-4 fw-bold">🎉 Joyeux Anniversaire ! 🎉</h1>
+            <p class="lead">Cher Mr LANYO,<br>
+                En ce jour spécial, je tiens à vous souhaiter un très joyeux anniversaire. Que cette année soit synonyme de succès, de santé et de moments mémorables. Merci pour votre leadership inspirant et votre dévouement qui motivent notre équipe au quotidien.
+                Profitez pleinement de cette journée qui vous est dédiée.
+                
+                Avec toute mon estime,
+                Hermann</p>
+            <button id="playMusic" class="btn btn-primary btn-lg mt-3">🎵 Play Music 🎵</button>
+        </div>
+    </div>
+    <!-- Balloons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Floating Balloons Animation (extra balloons)
+        for (let i = 0; i < 10; i++) {
+            let balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = Math.random() * 100 + '%';
+            document.body.appendChild(balloon);
+        }
+
+        // Play Music Button
+        document.getElementById('playMusic').addEventListener('click', function () {
+            let audio = new Audio('https://www.fesliyanstudios.com/play-mp3/387');
+            audio.play();
+        });
+    </script>
+</body>
+</html>
